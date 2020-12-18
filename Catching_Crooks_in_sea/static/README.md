@@ -1,1 +1,1 @@
-ststic folder contains all static files like CSS/JS files and images.
+static folder contains all static files like CSS/JS files and images.
