@@ -1,0 +1,137 @@
+<html>
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+          <!-- Latest compiled and minified CSS -->
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+          <!-- jQuery library -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+          <!-- Popper JS -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+          <!-- Latest compiled JavaScript -->
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>
+            Catching Crooks In The Sea
+        </title>
+        <style>
+          body {
+            /* background-image: linear-gradient(rgba(12, 12, 12, 0.712),rgba(3, 3, 3, 0.671)),url('/static/images/Ship7.png'); */
+            background-image: url('/static/images/Ship2.png');
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+          }
+
+          .form-group {
+              position: relative;
+              margin-bottom: 5%
+          }
+
+          .form-control-placeholder {
+              position: absolute;
+              top: 0;
+              padding: 7px 0 0 10px;
+              transition: all 200ms;
+              opacity: 0.5;
+              color:#fff;
+          }
+
+          .form-control:focus+.form-control-placeholder,
+          .form-control:valid+.form-control-placeholder {
+              font-size: 69%;
+              transform: translate3d(0, -100%, 0);
+              opacity: 1;
+              top: 10px
+          }
+
+          .form-control {
+              border: 0;
+              outline: 0;
+              border-bottom: 2px solid #eee;
+              font-size: 16px;
+              color: #ccc;
+              background-color: transparent
+          }
+
+          .form-control:focus {
+              border: 0;
+              color: #fff;
+              background-color: transparent;
+              border-color: #fff;
+              outline: 0;
+              border-bottom: 2px solid #fff;
+              box-shadow: 0 0 0 0.2rem transparent
+          }
+          .submitButton{
+              background-color: red;
+              color: #fff;
+              font-weight: bold;
+              font-size: medium;
+          }
+          .pageTitle{
+              text-align: center;
+              margin-top: 8%;
+              color: #fff;
+              text-decoration: underline;
+              text-decoration-color: red;
+              text-decoration-thickness: 3px;
+              font-weight: bold;
+          }
+          .predictionContent{
+              text-align: center;
+              margin-top: 4%;
+              color: #fff;
+          }
+          .info{
+            text-align: center;
+            color: #fff;
+            
+          }
+
+        </style>
+    </head>
+    <body>
+      <div class="pageTitle">
+        <h1>Catching Crooks In The Sea</h1>
+      </div>
+      <h6 class="info"> Project to check whether a ship will be sailing in 2016 or not. </h6>
+
+        <form class="login-form"  method="POST" action="/predict">
+          <div class="container my-5">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="form-group">
+                      <input type="text" name="active-2012" class="form-control" required>
+                      <label class="form-control-placeholder" for="active-2012">Was Ship Active in 2012?</label> 
+                    </div>
+
+                    <div class="form-group"> 
+                      <input type="text" name="active-2013" class="form-control" required>
+                      <label class="form-control-placeholder" for="active-2013">Was Ship Active in 2013?</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="active-2014" class="form-control" required>
+                      <label class="form-control-placeholder" for="active-2014">Was Ship Active in 2014?</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="active-2015" class="form-control" required>
+                      <label class="form-control-placeholder" for="active-2015">Was Ship Active in 2015?</label>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn submitButton btn-block">PREDICT</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="predictionContent">
+          <h1>{{pred}}</h1>
+        </div>
+    </body>
+</html>
